@@ -22,8 +22,6 @@ do
 	then
 		cat "${F}temp" "${F}nwline"
 		cat "${F}temp" "${F}nwline" >> "${F}${A}"
-        echo "fa2: "
-        cat "${F}${A}"
 	fi
 sleep 0.8
 done
