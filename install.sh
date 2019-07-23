@@ -14,6 +14,8 @@ then
     mkdir $D
 fi
 
+mkdir "${D}/a"
+
 PATH=$PATH:$HOME/bin
 export PATH
 
