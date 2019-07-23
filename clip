@@ -1,0 +1,55 @@
+#!/bin/bash
+
+FOLDER="/home/fsl/clip" #where clipboard files and cli-daemon are stored
+A="${FOLDER}/a" #all clipboard sections (*.clip files)
+ACTIVE="${FOLDER}/active" #active clipboard section
+F="${A}/$1.clip" #selected clipboard section
+
+if [ "$1" == "-a" ]
+then
+	ls $A
+elif [ "$1" == "-c" ]
+then
+	cat $ACTIVE
+else
+	if [ -z "$(ls -l $A | grep $F)" ]
+	then
+		touch $F
+	fi
+
+	L=${#2}
+	I=1
+
+	while [ $I -lt $L ]
+	do
+		T=${2:$I:1}
+
+		case "$T" in
+		"s")
+		   echo >> $F
+		   echo $F > $ACTIVE
+		   ;;
+		"o")
+		   cat $F
+		   ;;
+		"e")
+            if [ -z $3 ]
+            then
+                $EDITOR $F
+            else
+               $3 $F
+            fi
+		   ;;
+		"d")
+		   rm $F
+		   ;;
+		"y")
+			xclip -i -selection clipboard $F
+			;;
+		*)
+			echo "Error"
+			;;
+		esac
+		let I++
+	done
+fi
