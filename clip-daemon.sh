@@ -1,5 +1,5 @@
 #!/bin/bash
-F=~/clip/
+F=~/clip/ #path to the cloned repo
 
 while [ 0 -eq 0 ]
 do

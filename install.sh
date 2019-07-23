@@ -1,6 +1,6 @@
 #!/bin/bash
 
-D="/home/fsl/bin"
+D="/home/fsl/bin" #install directory
 
 if [ -z $(ls -l /usr/bin | grep xclip) ]
 then
@@ -14,7 +14,7 @@ then
     mkdir $D
 fi
 
-mkdir "${D}/a"
+mkdir a/
 
 PATH=$PATH:$HOME/bin
 export PATH
