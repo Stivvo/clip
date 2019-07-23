@@ -17,8 +17,7 @@ fi
 
 mkdir a/
 
-PATH=$PATH:$HOME/bin
-export PATH
+export PATH="${D}:$PATH"
 
 chmod +x clip
 chmod +x clip-daemon.sh
