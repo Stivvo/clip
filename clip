@@ -1,6 +1,7 @@
 #!/bin/bash
 
-FOLDER="/home/fsl/clip" #path to the cloned repo, where clipboard files and cli-daemon are stored
+ME=$(whoami)
+FOLDER="/home/${ME}/clip" #path to the cloned repo, where clipboard files and cli-daemon are stored
 A="${FOLDER}/a" #all clipboard sections (*.clip files)
 ACTIVE="${FOLDER}/active" #active clipboard section
 F="${A}/$1.clip" #selected clipboard section

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-D="/home/fsl/bin" #install directory
+ME=$(whoami)
+D="/home/${ME}/bin" #install directory
 
 if [ -z $(ls -l /usr/bin | grep xclip) ]
 then
