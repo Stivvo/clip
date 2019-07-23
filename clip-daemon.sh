@@ -1,15 +1,24 @@
 #!/bin/bash
-F=~/clip/ #path to the cloned repo
+
+ME=$(whoami)
+F="/home/${ME}/clip/" #path to the cloned repo
 
 while [ 0 -eq 0 ]
 do
-	xclip -o -selection c > "${F}temp"
+    echo $(xclip -o -selection c) > "${F}temp"
 	N=$(cat "${F}temp" | wc -l)
-	let N++
+    let N++
+    #let N++
 
 	A="$(cat "${F}active")"
 
-	if [ "$(cat "${F}temp")" != "$(tail -n "$N" "${F}${A}")" ]
+    CMP1=$(cat "${F}temp")
+    CMP2=$(tail -n "$N" "${F}${A}")
+    echo "fa: ${F}${A}, N: $N"
+    echo "CMP1: ${CMP1}"
+    echo "CMP2: ${CMP2}"
+
+	if [ "$CMP1" == "$CMP2" ]
 	then
 		cat "${F}temp" "${F}nwline" "${F}nwline"
 		cat "${F}temp" "${F}nwline" >> "${F}${A}"

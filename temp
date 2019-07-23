@@ -1,6 +1,0 @@
-$ git commit -m "path2"
-[master 05b9348] path2
- 1 file changed, 1 insertion(+), 1 deletion(-)
-fsl@vmubuntu:~/clip$ git push
-Username for 'https://github.com': Stivvo
-Password for 'https://Stivvo

@@ -22,4 +22,5 @@ clip 3 -ey gedit --> edit the section 3, save it and then yank its content
 
 there are other options if you don't specify any section:
 -a: shows active sections
--c: shows the current section
+-c: shows the current active section (the section where the copy buffer is
+copied)
