@@ -50,12 +50,17 @@ clip [number of the section] [options]
 
 -d: delete the content of the section
 
+-p: wait 1 sec (necessary to wait for cli-daemon.sh to rewrite in the selected section what your xclip buffer contains), use after -d to get just what you currently have in your xclip buffer
+
 
 ## other features
+
+xclip buffer contains the text you can paste
 
 you can use more than one option a the same time:
 
 example: clip 3 -ey gedit --> edit the section 3 with gedit, save it and then yank its content
+wrong: clip 3 -e -y gedit
 
 
 there are other options if you don't specify any section:

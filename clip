@@ -47,8 +47,11 @@ else
 		"y")
 			xclip -i -selection clipboard $F
 			;;
+        "p")
+            sleep 1
+           ;;
 		*)
-			echo "Error"
+			echo "Error, clip doesn't have that command"
 			;;
 		esac
 		let I++
